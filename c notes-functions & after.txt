@@ -1,0 +1,248 @@
+FUNCTION BASED ON ARGUMENT AND RETURN TYPE ARE OF 4 TYPES -->
+
+1. with argument and with return value
+2. with argument and without return value
+3. without argument and with return value
+4. without argument and without return value
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+ACTUAL PARAMETERS -->
+= variable in calling function whose value is being passed to the called function at the time of function called.
+
+FORMAL PARAMETER -->
+= variable in parameter list of called function which stores data of actual variable is called formal parameter.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+TYPES OF CALLING A FUNCTION/OR PASSING ARGUMENT TO A FUNCTION -->
+
+1. call by value / pass by value ->
+
+a. value of actual parameter is passed.
+b. formal parameter copies value of actual parameter.
+c. changes made in formal parameter will not reflect in actual parameter.
+
+2. call by reference / pass by reference ->
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+POINTERS -->
+
+= Pointers are variables used to store address of other variable
+
+SYNTAX FOR POINTER -->
+
+datatype *variable name
+  (ex) =  int*P = &a
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+RECURSION -->
+
+It is a process in which a function calls itself in order to solve a problem until a given condition is false. such type of function is called recursive function. Every recursive function must have a base condition to stop the recursive call otherwise function will be executed infinite times. 
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+ARRAY -->
+
+1.arryas are collection of similar types of data items.
+2.data items are stored at continuous memory location.
+3.all data items a re stored under one name.
+4.data items are considered as element of array.
+5.array are dry data type. 
+
+
+
+TYPES OF ARRAY -->
+= categorization of array depends on no. of subscript = 1d array,2d array,3d array
+
+1D ARRAY -->
+= only one subscript is used which decides length in array.
+= also called as vector.
+= memory allocated = (size of array*size of datatype).
+= array name stores base address of array.
+= all elements of array will have unique index value by using which element of array will be accessed.
+= array size must be known at compile time.
+
+
+DECLARATION OF 1D ARRAY -->
+
+SYNTAX = datatype*array name[x]    ([]=subscript , x = size)
+ex - int a[5]
+
+INITIALIZATION OF 1D ARRAY AT COMPILED TIME -->
+                             output
+int a[5] = {1,2,3,4,5}     1 2 3 4 5
+int a[5] = {1,2}           1 2 0 0 0 
+int a[] = {1,2,3,4,5}      1 2 3 4 5
+int a[5] = {1,2,3,4,5,6} ==> its is wrong as size is 5 but taking 6 elements.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+2D ARRAY -->
+
+= can be visualised as a matrix.it is mainly used to implement operation of matrices.
+= it have 2 subscript first for row and second for size of column.
+
+DECLARATION OF 2D ARRAY -->
+
+SYNTAX = datatype*array name[x][y]    ([]=subscript , x = row size, y = column size)
+ex - int a[5]
+
+STORAGE OF 2D ARRAY IN MEMORY -->
+
+A.}ROW MAJOR ORDER -->
+ 
+ |A00 A01|
+ |A10 A11|  = 2*2 MATRIX
+
+ROW MAJOR REPRESENTATION ==> A00 A01 A10 A11
+
+B.}COLUMN MAJOR ORDER -->
+
+ |A00 A01|
+ |A10 A11|  = 2*2 MATRIX
+
+COLUMN MAJOR REPRESENTATION ==> A00 A10 A01 A11
+-----------------------------------------------------------------------------------------------------------------------------------
+
+INITIALIZATION OF 2D ARRAY AT COMPILED TIME -->
+
+                                  output
+
+a[2][3] = {1,2,3,4,5,6}          |1 2 3|
+                                 |4 5 6|
+
+a[2][3] = {{1,2,3},{4,5,6}}      |1 2 3|
+                                 |4 5 6|
+
+a[2][3] = {1,2,3,4}              |1 2 3|
+                                 |4 0 0|
+
+a[2][3] = {1,2,3,4}              |1 2 3|
+                                 |4 0 0|
+
+a[2][3] = {{3,2},{3,4}}          |3 2 0|
+                                 |3 4 0|
+
+a[ ][3] = {1,2,3,4,5,6}          |1 2 3|
+                                 |4 5 6|
+
+a[2][.] = {1,2,3,4,5,6}         x=invalid
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+PASSING AN ARRAY TO A FUNCTION -->
+
+= for passing an array to some function only array name has to be passed.
+= formal parameters with respect to array must be of array type.
+= changes are directly made into actual array.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+STRING -->
+
+= string is a sequence of character treated as group.
+= a string is always terminated by a null character.
+= string can be implemented using character array.
+= a string const. is always denoted inside " ".
+
+DECLARATION OF STRING -->
+
+DATATYPE = char "string name"[size]
+ex= char a[20]
+
+INITIALIZATION OF STRING -->
+
+char a[20] = "maneesh";
+output = |m|a|n|e|e|s|h|n|\0|
+
+= compiler will automatically attach a null character at end of string if input is produced in form of string.
+
+TWO NEW FUNCTIONS AND ONE HEADER FILE-->
+
+A. gets() --> input
+B. puts() --> print
+C. #include <string.h> 
+
+#INCLUDE<STRING.H> ==>
+
+= it is a header file in standard c library which stores the function related to string manipulation
+
+1. str len
+2. str cmp (compare)
+3. str cpy (copy)
+4. str cat (concatenation)
+5. str rev
+6. str lwr
+7. str upr
+
+str len --> 
+= used to find out length (no. of character) of string.
+= it returns integer value.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+STRUCTURE -->
+
+= structure is a user defined datatype in c.
+= it allows to combine different types of data items.
+= structure is collection of different datatypes grouped together under one name where each element is called member of structure.
+= structure is mainly used to represent the record. for ex = a students record which may contain name, age, roll no., marks.
+= defining a structure STRUCT KEYWORD is used.
+
+
+DECLARATION OF STRUCTURE(SYNTAX) -->
+
+= memory will be allocated to a structure variable at the time of declaration. Size of memory allocated = SUM OF SIZE OF ALL THE MEMBERS
+= to access member of a structure dot and arrow operator are used.(dot operator is used for normal structure).(arrow operator is used for pointer structure).
+
+
+struct (name)
+{
+   member 1;
+   member 2;
+   member n;
+};
+int main
+{
+struct (name) (variable) = {"member 1",member 2,.....,member n}
+}
+
+
+EX =// enter and display record of student using structure where members are name, age, roll no., marks
+#include<stdio.h>
+struct student
+{
+	char name[20];
+	int rollno;
+	int age;
+	float marks;
+};
+int main (){
+	struct student s;
+	printf("enter record of student: ");
+	printf("enter name of student: ");
+	gets(s.name);
+	printf("enter roll no.: ");
+	scanf("%d",&s.rollno);
+	printf("enter age: ");
+	scanf("%d",&s.age);
+	printf("enter marks: ");
+	scanf("%f",&s.marks);
+	return 0;
+
+}
+
+ARRAY OF STRUCTURE -->
+
+= can be used to store multiple records using defined structure.for ex if we have to store record of 100 students = ARRAY OF STRUCTURE STUDENT CAN BE USED
+
+SYNTAX -->
+struct (structure name) (variable name a[])
+EX = struct student s[100]
+
+= netsed structure is a structure variable which conatins a structure
